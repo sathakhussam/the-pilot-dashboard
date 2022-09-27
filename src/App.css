@@ -9,10 +9,29 @@ body {
   background: #1b1b1b;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   color: white;
 }
 
 a {
   text-decoration: none;
   color: white;
+}
+
+.App {
+  display: flex;
+}
+
+.sidebar {
+  width: 15vw;
+}
+
+.main-content {
+  margin: 1.5rem 1rem;
+  margin-left: 0rem;
+  width: 85vw;
+  height: 96vh;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(11px);
+  border-radius: 1.5rem;
 }
