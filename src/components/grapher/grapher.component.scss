@@ -1,0 +1,20 @@
+.grapher {
+  padding: 2.5rem;
+  background: #0f0f0f;
+  border-radius: 1.5rem;
+  margin: 1rem 0;
+  position: relative;
+
+  .filter > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}

@@ -1,10 +1,18 @@
 .home {
+  margin: 1.5rem;
+
+  .grid-64 {
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    grid-gap: 1.5rem;
+  }
 }
 
 .infos {
   display: flex;
   justify-content: space-evenly;
   margin-top: 3rem;
+  margin-bottom: 1rem;
 
   .divider {
     border: 1px solid #1b1b1b;
