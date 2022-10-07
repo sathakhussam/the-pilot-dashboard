@@ -2,6 +2,7 @@ import "./App.css";
 import FilterPopup from "./components/filter-popup/filter-popup.component";
 import Sidebar from "./components/sidebar/sidebar.component";
 import Home from "./pages/home/home.page";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
       <FilterPopup />
       <Sidebar />
       <div className="main-content">
-        <Home />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+        </Routes>
       </div>
     </div>
   );
