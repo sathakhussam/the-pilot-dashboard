@@ -1,10 +1,11 @@
 import React, { Component, useState } from "react";
 import TopBar from "../../components/topbar/topbar.component";
 import Grapher from "../../components/grapher/grapher.component";
+import Lister from "../../components/lister/lister.component";
 import totalUsersIcon from "../../media/images/total-users-icon.svg";
 import conversionFunnel from "../../media/images/conversion-funnel.svg";
 import wallet from "../../media/images/wallet.svg";
-import "./home.page.scss";
+import "./users.page.scss";
 import { faker } from "@faker-js/faker";
 import { Chart } from "react-google-charts";
 
@@ -23,7 +24,7 @@ import {
 
 import { Bar, Line, Doughnut } from "react-chartjs-2";
 
-function Home() {
+function Users() {
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -91,59 +92,9 @@ function Home() {
     ],
   };
 
-  const [revenueLabel, setRevenueLabel] = useState([
-    "1 Jan",
-    "2 Jan",
-    "3 Jan",
-    "4 Jan",
-    "5 Jan",
-    "6 Jan",
-    "7 Jan",
-  ]);
-  const revenueData = {
-    labels: revenueLabel,
-    datasets: [
-      {
-        label: "Revenue",
-        fill: true,
-        data: revenueLabel.map(() =>
-          faker.datatype.number({ min: 0, max: 1000 })
-        ),
-        borderColor: "#A06AF9",
-        backgroundColor: "rgba(160, 106, 249, 0.13)",
-      },
-    ],
-  };
-  const timeData = {
-    labels: ["Roster", "Weather", "WX Map", "Notams", "Safebox", "Home"],
-    datasets: [
-      {
-        label: "Time Data",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "#246BFD",
-          "#EDEF00",
-          "#FBA3FF",
-          "#A06AF9",
-          "#F96A6A",
-          "#8BC8B3",
-        ],
-        borderColor: [
-          "#246BFD",
-          "#EDEF00",
-          "#FBA3FF",
-          "#A06AF9",
-          "#F96A6A",
-          "#8BC8B3",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
-
   const [totalUsers, setTotalUsers] = useState("1.2K");
-  const [conversionRate, setConversionRate] = useState("78.8%");
-  const [revenueRate, setRevenueRate] = useState("$200K");
+  const [userOnboard, setUserOnboard] = useState("347");
+  const [expiringSubs, setExpiringSubs] = useState("176");
   return (
     <div className="home">
       <TopBar />
@@ -160,16 +111,16 @@ function Home() {
         <div className="info">
           <img src={conversionFunnel} alt="total-users-icon" />
           <div>
-            <p className="highlight">{conversionRate}</p>
-            <p className="explaination">Conversion Rate</p>
+            <p className="highlight">{userOnboard}</p>
+            <p className="explaination">Users Onboarded This Month</p>
           </div>
         </div>
         <div className="divider" />
         <div className="info">
           <img src={wallet} alt="total-users-icon" />
           <div>
-            <p className="highlight">{revenueRate}</p>
-            <p className="explaination">Total Revenue</p>
+            <p className="highlight">{expiringSubs}</p>
+            <p className="explaination">Expiring subscriptions</p>
           </div>
         </div>
       </div>
@@ -215,36 +166,11 @@ function Home() {
           />
         </Grapher>
       </div>
-      <div className="grid-64">
-        <Grapher graphId="first" title="Revenue">
-          <Line
-            data={revenueData}
-            options={{
-              responsive: true,
-              plugins: {
-                legend: {
-                  position: "top",
-                },
-              },
-            }}
-          />
-        </Grapher>
-        <Grapher graphId="first" title="Users By Region">
-          <Doughnut
-            data={timeData}
-            options={{
-              responsive: true,
-              plugins: {
-                legend: {
-                  position: "top",
-                },
-              },
-            }}
-          />
-        </Grapher>
+      <div className="grid-12">
+        <Lister title="Users List"></Lister>
       </div>
     </div>
   );
 }
 
-export default Home;
+export default Users;
