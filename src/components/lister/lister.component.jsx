@@ -4,6 +4,7 @@ import searchIcon from "../../media/images/search-icon.svg";
 import React, { useState, useEffect } from "react";
 import threeDots from "../../media/images/three-dots.svg";
 import sampleImage from "../../media/images/sample.png";
+import { Link } from "react-router-dom";
 
 function Lister(props) {
   const [clicked, setClicked] = useState(true);
@@ -46,25 +47,12 @@ function Lister(props) {
         </tr>
         <tr className="">
           <td>
-            <div>
-              <img src={sampleImage} alt="Profile Image" />
-              <p>Robert Fox</p>
-            </div>
-          </td>
-          <td className="tablet green">Paid</td>
-          <td>12 May 2022</td>
-          <td>12 May 2022</td>
-          <td className="tablet red">active</td>
-          <td>
-            <img src={threeDots} alt="Three dots" />
-          </td>
-        </tr>
-        <tr className="">
-          <td>
-            <div>
-              <img src={sampleImage} alt="Profile Image" />
-              <p>Robert Fox</p>
-            </div>
+            <Link to="/users/id">
+              <div>
+                <img src={sampleImage} alt="Profile Image" />
+                <p>Robert Fox</p>
+              </div>
+            </Link>
           </td>
           <td className="tablet green">Paid</td>
           <td>12 May 2022</td>
