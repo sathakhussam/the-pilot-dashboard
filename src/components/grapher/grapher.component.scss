@@ -18,3 +18,20 @@
 .hide {
   display: none;
 }
+
+
+@media only screen and (max-width:591px){
+  .grapher{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+  }
+}
+
+@media only screen and (max-width:430px){
+  .grapher{
+    padding: 10px;
+  }
+}

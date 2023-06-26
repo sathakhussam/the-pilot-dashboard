@@ -1,5 +1,7 @@
 .filter-pop {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -12,6 +14,10 @@
     padding: 1.5rem;
     border-radius: 0.8rem;
     width: 30vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%,-50%);
 
     .top {
       display: flex;
@@ -60,10 +66,34 @@
             }
             input {
               margin: 1rem 0;
+              padding: 10px;
+              font-size: 0.7rem;
+              border-radius: 5px;
+
+              &:focus{
+                outline: none;
+                border-color: #246bfd;
+              }
             }
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width:520px){
+  .filter-pop{
+    .background{
+      width: 60vw;
+    }
+  }
+}
+
+@media only screen and (max-width:300px){
+  .filter-pop{
+    .background{
+      width: 80vw;
     }
   }
 }

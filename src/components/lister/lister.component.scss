@@ -53,12 +53,20 @@
   table {
     margin: 1.5rem 0;
     width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
     tr {
       display: flex;
       justify-content: space-between;
+      flex-direction: row;
       line-height: 21px;
       align-items: center;
       padding: 0 2.5rem;
+
+      .profileImageSeperateuser{
+        width: 40px;
+        border-radius: 5px;
+      }
 
       &:nth-child(odd) {
         background: rgba(33, 38, 39, 0.32);
@@ -67,7 +75,10 @@
       td,
       th {
         padding: 1rem 0;
-
+        width: 15vw;
+        display: flex;
+        justify-content: center;
+        
         > a > div {
           display: flex;
           align-items: center;
@@ -76,8 +87,10 @@
             margin-right: 1rem;
           }
         }
-
-        &.tablet {
+        p{
+          flex: 0.7;
+        }
+        .tablet {
           padding: 0.7rem 1.8rem;
           border-radius: 2rem;
 
@@ -101,4 +114,63 @@
 
 .hide {
   display: none;
+}
+
+
+@media only screen and (max-width:850px){
+  .lister{
+    table{
+      background-color: transparent;
+      thead{
+        display: none;
+      }
+      tr{
+        background-color: #1b1b1b;
+        border-radius: 16px;
+        margin: 5px;
+        flex-direction: column;
+        td{
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          align-items: center;
+          text-align: left;
+          float: right;
+          
+        }
+        td.tablet{
+          padding: 10px 20px 10px 0;
+        }
+        td::before {
+          content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: transparent;
+            color: #fff;
+          }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:488px){
+  table{
+    font-size: 0.7rem;
+  }
+} 
+
+@media only screen and (max-width:440px) {
+  .lister{
+
+    .searchBar{
+      display: none;
+    }
+    .head-sub{
+      h2{
+        font-size: 1rem;
+      }
+      
+    }
+  }
 }

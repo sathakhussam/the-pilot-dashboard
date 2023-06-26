@@ -13,15 +13,18 @@ import integrations_icon_active from "../../media/images/integrations-sidebar-ac
 import analytics_icon_active from "../../media/images/analytics-sidebar-active.svg";
 import settings_icon_active from "../../media/images/settings-sidebar-active.svg";
 import users_icon_active from "../../media/images/users-sidebar-active.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 function Sidebar() {
+  const [cookies,setCookies,removeCookie] = useCookies([])
+  const navigate = useNavigate()
   return (
     <div className="sidebar">
       <div className="filter-top"></div>
       <img src={logo} alt="logo" />
       <div className="links">
-        <NavLink end activeClassName="active" to="/">
+        <NavLink end activeClassName="active" to="/home">
           <div className="link active">
             <div className="sider"></div>
             <div className="sider-next">
@@ -77,7 +80,7 @@ function Sidebar() {
             </div>
           </div>
         </NavLink>
-        <NavLink end activeClassName="active" to="/analytics">
+        <NavLink end activeClassName="active" to="/" onClick={()=>{removeCookie('AuthToken');navigate('/');window.location.reload()}}>
           <div className="link">
             <div className="sider"></div>
             <div className="sider-next">
@@ -87,7 +90,7 @@ function Sidebar() {
                 alt="icon"
                 className="active-image"
               />
-              <p>Analytics</p>
+              <p>Logout</p>
             </div>
           </div>
         </NavLink>

@@ -1,0 +1,30 @@
+.notificationModal{
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    max-height: 400px;
+    min-height: 200px;
+    z-index: 100000;
+    overflow-y: scroll;
+    border-radius: 3px;
+    ul{
+        color: black;
+
+        li{
+            margin: 20px;
+            list-style: none;
+            font-weight: bolder;
+
+            &:hover{
+                background-color: rgba(182,182,182,0.9);
+            }
+        }
+
+        h4{
+            color: rgba(152,152,152,1);
+            font-weight: bolder;
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+}

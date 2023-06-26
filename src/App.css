@@ -20,6 +20,8 @@ a {
 
 .App {
   display: flex;
+  justify-content: stretch;
+  align-items: stretch;
 }
 
 #snackbar {
@@ -51,8 +53,17 @@ input[type="radio"]:checked + label {
   backdrop-filter: blur(11px);
   border-radius: 1.5rem;
   overflow-y: scroll;
+  flex: 1;
 }
 
 .graph-60 {
   width: 30vw;
+}
+
+@media only screen and (max-width:504px){
+  .main-content{
+    margin: 0;
+    height: 100vh;
+    border-radius: 10px 0 0 10px;
+  }
 }

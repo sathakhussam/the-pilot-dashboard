@@ -1,6 +1,6 @@
 .topbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   & > div {
     display: flex;
@@ -68,6 +68,62 @@
 
     img {
       margin: 0 1rem;
+
+      &.profileImage{
+        width: 50px;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width:700px){
+  .topbar {
+    .profile{ 
+      .userName{
+        display: none;
+      }
+      img{
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:450px){
+  .topbar {
+    position: relative;
+    .searchBar{
+      padding: 2px;
+      width: 30%;
+
+      img {
+        width: 20%;
+        margin: 0;
+      }
+      input{
+        width: 60%;
+        padding: 0;
+        font-size: 0.7rem;
+        height: 50%;
+      }
+    }
+    .notifications{
+      transform: scale(0.8);
+      margin-right: 5px;
+    }
+
+    .profile{
+      transform: scale(0.8);
+    }
+  }
+}
+
+@media only screen and (max-width:450px){
+  .topbar {
+    .notifications{
+      margin-left: 5px;
     }
   }
 }

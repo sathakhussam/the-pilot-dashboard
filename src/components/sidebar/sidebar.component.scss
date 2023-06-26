@@ -4,6 +4,7 @@
   flex-direction: column;
   padding: 1.5rem 2.5rem;
   padding-left: 0;
+  width: 20vw;
 
   .filter-top {
     position: absolute;
@@ -19,7 +20,7 @@
   & > img {
     margin: 1rem 0;
     margin-left: 2.5rem;
-    width: 70%;
+    width: 80%;
   }
 
   .links {
@@ -86,6 +87,82 @@
 
         .active-image {
           display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:1103px){
+  .sidebar{
+    padding-right: 10px;
+    .links{
+      a{
+        .link{
+          .sider-next{
+            img {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:769px){
+  .sidebar{
+    padding-right: 5px;
+    .links{
+      a{
+        .link{
+          .sider-next{
+            img {
+              transform: scale(0.85);
+              margin-right: 10px;
+            }
+            p{
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:615px) { 
+  .sidebar{
+    width: 15vw;
+    padding-right: 5px;
+    
+    & > img{
+      margin: 2px;
+      width: 90%;
+    }
+
+    .links{
+        .divider{
+          margin: 5px;
+        }
+       a{ 
+          
+          .sider-next{
+            overflow: hidden;
+            width:19vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+
+          img{
+            align-self: center;
+            transform: scale(1);
+          }
+
+          p{
+            display: none;
+          }
         }
       }
     }

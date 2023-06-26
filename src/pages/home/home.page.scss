@@ -1,10 +1,41 @@
 .home {
-  margin: 1.5rem;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
 
   .grid-64 {
-    display: grid;
-    grid-template-columns: 6fr 3fr;
-    grid-gap: 1.5rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+
+    .bar{
+      width: 60%;
+      height: 60vh;
+    }
+
+    .doughnut{
+      width: 30%;
+      height: 60vh;
+      margin:0 10px;
+      flex: 1;
+      .grapher{
+        height: 100%;
+      }
+    }
+  }
+  .grid-12 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 50vh;
   }
 }
 
@@ -32,13 +63,134 @@
       align-items: flex-start;
       margin-left: 1.5rem;
       .highlight {
-        font-size: 2.3rem;
+        font-size: 1.3rem;
         font-weight: 600;
       }
 
       .explaination {
         font-size: 0.8rem;
         color: #6b7483;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:770px){
+  .infos{
+    .info{
+      img{
+        width: 30px;
+      }
+      &>div{
+        margin-left: 10px;
+        .highlight{
+          font-size: 1.3rem;
+        }
+        .explaination{
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:700px) {
+  
+  .home{
+
+      .v2{
+        position: relative;
+        top: -1000px;
+      }
+  }
+}
+
+@media only screen and (max-width:398px){
+  .infos{
+    .info{
+      img{
+        width: 20px;
+      }
+      &>div{
+        margin-left: 10px;
+        .highlight{
+          font-size: 1rem;
+        }
+        .explaination{
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:960px) {
+  .home{
+    position: relative;
+    .grid-64{
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      height: 80vh;
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      &.v2{
+        position: relative;
+        top: 70%;
+      }
+      .bar,.doughnut{
+        margin-top: 20px;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+        justify-content: space-evenly;
+      
+        .grapher{
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:740px) {
+  .home{
+    position: relative;
+    .grid-64{
+
+      &.v2{
+        position: relative;
+        top: 60%;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width:600px) {
+  .home{
+    position: relative;
+    .grid-64{
+
+      &.v2{
+        position: relative;
+        top: 40%;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width:450px) {
+  .home{
+    position: relative;
+    .grid-64{
+
+      &.v2{
+        position: relative;
+        top: 30%;
       }
     }
   }

@@ -2,32 +2,40 @@ import "./grapher.component.scss";
 import filterIcon from "../../media/images/filter-icon.svg";
 
 import React, { useState, useEffect } from "react";
+import FilterPopup from "../filter-popup/filter-popup.component";
+import { useCookies } from "react-cookie";
 
-function Grapher(props) {
+function Grapher({children,graphId,propertyName,propertyChange,style,title}) {
   const [clicked, setClicked] = useState(true);
+  const [showModal,setShowModal] = useState(false)
+  const [cookie,setCookie] = useCookies([])
 
   async function openFilterPopUp(e) {
     document.querySelector(".App .filter-pop").className = "filter-pop";
-
-    localStorage.setItem("active", props.graphId);
-
+    localStorage.setItem("active", graphId);
+    setCookie('active',graphId)
+    console.log(graphId);
     console.log(document.querySelector(".App .filter-pop.hide"));
   }
+  console.log(style);
 
   return (
-    <div className="grapher">
+    <div style={style} className="grapher">
       <div className="filter">
         <div>
-          <h2>{props.title}</h2>
+          <h2>{title}</h2>
           <img
-            onClick={openFilterPopUp}
+            onClick={(e)=>{
+              openFilterPopUp(e)
+              setShowModal(true)
+            }}
             src={filterIcon}
             alt="Filter icon"
             className="filter-btn"
           />
         </div>
       </div>
-      {props.children}
+      {children}
     </div>
   );
 }

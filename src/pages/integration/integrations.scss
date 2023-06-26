@@ -1,0 +1,20 @@
+.integration{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    position: relative;
+    .theSelector{
+        align-self: flex-end;
+    }
+
+    .contents{
+        flex: 1;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+//kun anta

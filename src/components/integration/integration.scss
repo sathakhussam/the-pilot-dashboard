@@ -1,0 +1,87 @@
+.subintegration{
+    width: 23rem;
+    background: rgba(27, 27, 27, 0.56);
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px 15px;
+    margin: 10px 0;
+    height: 50%;
+
+    h2{
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 26px;
+        margin: 10px 0;
+    }
+
+    .imgContainer{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        img{
+            width: 50px;
+            object-fit: cover;
+        }
+    }
+
+    .details{
+        width: 100%;
+
+        .detail{
+            background: rgba(0, 0, 0, 0.37);
+            border-radius: 13px;
+            margin: 10px 0;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p{
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1056px){
+    .subintegration{
+        width: 20rem;
+    }
+}
+
+
+@media only screen and (max-width:914px) {
+    .subintegration{
+        width: 19rem;
+    }
+}
+
+@media only screen and (max-width:560px) {
+    .subintegration{
+        width: 85%;
+    }
+}
+
+
+@media only screen and (max-width:463px) {
+    .subintegration{
+        width: 90%;
+        .details{
+            .detail{
+                p{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}

@@ -1,44 +1,369 @@
-.home {
-  margin: 1.5rem;
+.userSeperate{
+  padding: 40px;
+  width: 100%;
+  height: 100%;
+  .mainDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;    
+    margin-top: 20px;
+    
+    .leftSide{
+      width: 65%;
 
-  .grid-64 {
-    display: grid;
-    grid-template-columns: 6fr 3fr;
-    grid-gap: 1.5rem;
+      .slider{
+        width: 100%;
+        border :2px solid rgba(33, 37, 45, 0.33);
+      }
+
+      .top{
+        display: flex;
+        align-items: stretch;
+        justify-content: space-evenly;
+
+        .bg-grey{
+          width: 48%;
+          padding: 20px;
+          position: relative;
+
+          .slider{
+            margin: 20px 0;
+          }
+
+          p.h3{
+            font-size: 1.2rem;
+            font-weight: bolder;
+            margin-bottom: 10px;
+          }
+
+          p.h4{
+            font-size: 1.1rem;
+            font-weight: bold;
+          }
+
+          p.h4{
+            &+p{
+              font-size: 0.8rem;
+              color: #ABB1BB;
+            }
+          }
+
+          .bg-light-grey{
+            background-color: #21252D;
+            border-radius: 12px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+          }
+          
+          table.airline-detail{
+            tr{
+              // display: flex;
+              // justify-content: flex-start;
+              // align-items: center;
+              margin: 10px 0;
+  
+              &>p{
+                width: 20%;
+                margin-right: 20px;
+              }
+              .airline-detail-single{
+                background-color:rgba(33, 37, 45, 0.38);
+                padding: 5px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 47px;
+  
+                img{
+                  width: 25px;
+                  border-radius: 100%;
+                  margin-right: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .bottom{
+        margin-top: 20px;
+         p.h3{
+          padding: 20px 10px;
+         }
+
+         table{
+          width: 100%;
+          border: none;
+          font-size: 0.7rem;
+          thead{
+            border: none;
+            
+            
+            th{
+              background-color: #000;
+              border: none;
+              margin: 0;
+              padding: 10px 0;
+            }
+          }
+
+          tbody{
+            tr{
+              width: 100%;
+              td{
+                text-align: center;
+                padding: 20px 0;
+                margin: 0;
+                position: relative;
+
+                .status{
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translateX(-50%) translateY(-50%);
+                  padding: 10px;
+                  border-radius: 71px;
+                }
+
+                .red{
+                  background: rgba(45, 30, 30, 0.56);
+                  color: #C74242;
+                }
+                .green{
+                  color: #42C799;
+                  background: rgba(30, 45, 40, 0.56);
+                }
+              }
+            }
+          }
+         }
+      }
+    }
+
+    .userDetails{
+      width: 30%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      align-items: center;
+      padding: 30px 10px;
+
+      .innerUserMain{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      img{
+        width: 30%;
+        border-radius: 20px;
+      }
+
+      h2{
+        margin: 15px 0;
+      }
+
+      button{
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: #C74242;
+        color: #fff;
+        border: none;
+
+        span{
+          margin-left: 5px;
+        }
+      }
+
+      .details{
+        margin-top: 20px;
+        border-top: 1px solid #151619;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+
+        .profile{
+          width: 100%;
+          padding-left: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: flex-end;
+
+          .profileItem{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 20px;
+            
+            .iconHolder{
+              padding: 8px;
+              border-radius: 15px;
+              background-color: #171A20;
+              margin-right: 10%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: #1236FF;
+            }
+
+            .detailName{
+              font-weight: 300;
+            }
+
+            .detailName,.subDetail{
+              font-size: 0.8rem;
+            }
+            .subDetail{
+              font-weight: 100;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bg-grey{
+    background-color: #0f0f0f;
+    border-radius: 20px;
+  }
+
+  .nameDiv{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+
+    p{
+      margin-left: 10px;
+    }
+  }
+
+}
+
+@media only screen and (max-width:1123px){
+  .userSeperate{
+    padding: 20px 10px;
+    .mainDiv{
+      .userDetails{
+        h2{
+          font-size: 1.1rem;
+        }
+        .details{
+          .profile{
+            padding-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width:900px){
+  .userSeperate{
+    padding: 20px 10px;
+    .mainDiv{
+      flex-direction: column-reverse;
+
+      .leftSide{
+        width: 100%;
+      }
+
+      .userDetails{
+        width: 100%;
+        flex-direction: row;
+        height: 60vh;
+        overflow: hidden;
+        padding: 0px;
+        .innerUserMain{
+          width: 40%;
+        }
+
+        .details{
+          padding: 0;
+          margin: 0;
+          border-top: none;
+          border-left: 1px solid #151515;
+          padding: 10px;
+          h3{
+            display: none;
+          }
+          .profile{
+            height: 90%;
+            padding: 0;
+          }
+        }
+      }
+    }
   }
 }
 
-.infos {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
 
-  .divider {
-    border: 1px solid #1b1b1b;
-  }
-
-  .info {
-    display: flex;
-
-    img {
-      width: 3rem;
-    }
-
-    & > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: flex-start;
-      margin-left: 1.5rem;
-      .highlight {
-        font-size: 2.3rem;
-        font-weight: 600;
+@media only screen and (max-width:557px){
+  .userSeperate{
+    .mainDiv{
+      .top{
+        .bg-grey{
+          .single{
+            justify-content: space-between;
+            p{
+              font-size: 0.6rem;
+            }
+          }
+        }
       }
 
-      .explaination {
-        font-size: 0.8rem;
-        color: #6b7483;
+      .userDetails{
+        padding: 10px 0;
+        width: 95%;
+        height: 75vh;
+        flex-direction: column;
+        h2{
+          text-align: center;
+        }
+
+        .details{
+          border: none;
+          border-top: 1px solid #151619;
+
+          .profile{
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:457px){
+  .userSeperate{
+    .mainDiv{
+      .leftSide{
+        .top{
+          flex-direction: column;
+          .bg-grey{
+            width: 100%;
+            margin-top: 10px;
+            .single{
+              justify-content: space-between;
+            }
+          }
+        }
+      }
+      .userDetails{
+        height: 70vh;
       }
     }
   }
